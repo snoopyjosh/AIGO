@@ -5,6 +5,8 @@ from linebot.exceptions import InvalidSignatureError
 
 from linebot.models import *
 
+from database import init_db
+
 app = Flask(__name__)
 
 line_bot_api = LineBotApi(
@@ -66,4 +68,5 @@ def handle_message(event):
 
 
 if __name__ == "__main__":
+    init_db()
     app.run()
